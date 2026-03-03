@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Birthday Story Game 🎮</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    font-family: Arial, sans-serif;
+
+    background-image: url("file:///F:/ULTAHH%20AZKAA/Hrusnyaa/bg.png.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#box{
+    background: white;
+    color: black;
+    padding:25px;
+    width:400px;
+    border-radius:15px;
+    text-align:center;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:white;
+    color:black;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ffd6ec;
+}
+
+.choice{
+    display:block;
+    width:100%;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+<audio id="bgm" src="bgm.mp3" loop></audio>
+
+<div id="box">
+    <h1>HAII 👋</h1>
+    <button onclick="next1()">Lanjut</button>
+</div>
+
+<script>
+
+window.addEventListener("load", function() {
+    const music = document.getElementById("bgm");
+
+    document.body.addEventListener("click", function() {
+        music.play().catch(err => console.log(err));
+    }, { once: true });
+});
+
+function next1(){
+    document.getElementById("box").innerHTML = `
+    <h2>Selamat Happy HBD Day buat orang yang Birthday 🎂</h2>
+    <button onclick="next2()">Lanjut</button>
+    `;
+}
+
+function next2(){
+    document.getElementById("box").innerHTML = `
+    <h2>IYA IYA SORRY, pasti lu masih marah ya sama gw? 😔</h2>
+    <button class="choice" onclick="good()">G</button>
+    <button class="choice" onclick="sorry()">Y</button>
+    `;
+}
+
+function good(){
+    document.getElementById("box").innerHTML = `
+    <h2>SERIUSSS, SUMPAH HATI LU BAIK BANGETSSS 💖</h2>
+    <button onclick="next3()">Lanjut</button>
+    `;
+}
+
+function sorry(){
+    document.getElementById("box").innerHTML = `
+    <h2>GW MINTA MAAF SERIUS SERIUS INI DARI LUBUK HATI GW, 
+    GW MINTA MAAF SEBERAT BERATNYA 🙏</h2>
+    <button onclick="next3()">Lanjut</button>
+    `;
+}
+
+function next3(){
+    document.getElementById("box").innerHTML = `
+    <h3>Pesan dari yang bikin</h3>
+    <p style="font-size:14px; text-align:left;">
+    Ya ya.. gw emang jarang bisa di andelin, sorry yaa si cuek, kull, mempesona, tengil, keren,
+    yang kemaren hbd, cool lagi dan aneh ini udah bikin lu keribetan.<br><br>
+
+    Jujurr buat masalah si masalalu nyebelin itu, gw bener bener ga ekspek bakalan nyerang nyerang lu lagi.
+    (kalau boleh, gw mau tau awalan dia nyindir nyindir lu tuh gimanaa, biar gw tau awal mula si gajelas itu nyindir lu).<br><br>
+
+    Kesampingkan dia, met ultah ye cill 🎂 
+    semoga semua hal yang lu semogakan (yang baik baik pastinya) segera terwujud.
+    </p>
+    <button onclick="next4()">Lanjut</button>
+    `;
+}
+
+function next4(){
+    document.getElementById("box").innerHTML = `
+    <p>Kalo lu ngasih gw puisi, gw kasih apa ya?<br>
+    Ngasih sayangnya aja boleh gak sih— EHH SORRY ASBUN BUAYA</p>
+
+    <p><b>LIAT NIH PANTUN GWWW</b></p>
+
+    <p>
+    Makan mie pake telur (CAKEPPP)<br>
+    Minumnya pake es campur (AIDAH CAKEP BENER)<br>
+    Happy Birthday yang gapernah nganggur<br>
+    Semoga rezekinya ngalir terus gapernah mundur
+    </p>
+
+    <p><b>ALAH ALAH IHIY IHIY</b><br>
+    (sumpah itu freak banget, maafkan )</p>
+
+    <button onclick="location.reload()">Main Lagi 🎮</button>
+    `;
+}
+
+</script>
+
+</body>
+</html>
